@@ -59,4 +59,3 @@ const EventsSection = ({events,cause,setCause,causeid}) => {
 export default EventsSection;
 
 
-// AIzaSyA2ozQwQ771-_55SFtt3PmH4BdKdSML8-g
