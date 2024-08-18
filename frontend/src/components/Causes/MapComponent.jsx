@@ -50,7 +50,7 @@ const MapComponent = () => {
     return (
         <div className="map-container">
             <h2 className="map-header">Explore Local Causes</h2>
-            <LoadScript googleMapsApiKey="AIzaSyCdYKL5a3qqZBMphKPEIEZYQml02Qs8hLQ">
+            <LoadScript googleMapsApiKey="">
                 <GoogleMap
                     mapContainerStyle={mapStyles}
                     zoom={12}
