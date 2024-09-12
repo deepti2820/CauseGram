@@ -1,6 +1,11 @@
+
+if(process.env.NODE_ENV!=='production'){
+  require('dotenv').config();
+}
 const express=require("express");
 const app=express();
-const PORT=5000
+const PORT=process.env.PORT || 4000;
+
 const cors=require("cors");
 const mongoose=require("mongoose");
 const User=require("./models/userModel");
@@ -12,8 +17,8 @@ const chatRoutes=require("./routes/chatRoutes");
 const messageRoutes=require("./routes/messageRoutes");
 const causeRoutes=require("./routes/causeRoute")
 const eventRoutes=require("./routes/eventRoutes")
-
-mongoose.connect("mongodb://localhost:27017/instaClone")
+const dbUrl=process.env.dbUrl||mongodb+srv://deeptisinghal2003:jPb3cKuRF24SzJic@cluster0.hbup2bu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+mongoose.connect(dbUrl)
 .then(()=>{
     console.log("Connected");
 })
