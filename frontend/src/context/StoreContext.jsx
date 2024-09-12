@@ -14,7 +14,7 @@ const StoreContextProvider=(props)=>{
 
  const [userLogin,setUserLogin]=useState(false);
 
- const url="http://localhost:5000"
+ const url="https://causegrambackend-bju0.onrender.com"
 
 const frontendUrl="http://localhost:5173";
 
