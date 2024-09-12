@@ -17,7 +17,7 @@ const chatRoutes=require("./routes/chatRoutes");
 const messageRoutes=require("./routes/messageRoutes");
 const causeRoutes=require("./routes/causeRoute")
 const eventRoutes=require("./routes/eventRoutes")
-const dbUrl=process.env.dbUrl||mongodb+srv://deeptisinghal2003:jPb3cKuRF24SzJic@cluster0.hbup2bu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+const dbUrl=process.env.dbUrl;
 mongoose.connect(dbUrl)
 .then(()=>{
     console.log("Connected");
