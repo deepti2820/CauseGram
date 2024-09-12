@@ -16,7 +16,7 @@ const StoreContextProvider=(props)=>{
 
  const url="https://causegrambackend-bju0.onrender.com"
 
-const frontendUrl="https://causegramfrontend-xm2d.onrender.com";
+const frontendUrl="https://causegramfrontend.onrender.com";
 
  const likePost = (id) => {
     fetch(`${url}/like`, {
