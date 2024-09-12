@@ -63,7 +63,6 @@ const FollowDonateButtons = ({admin,causeid,setCause,cause,events}) => {
            
             {admin &&      <Link to={`/${causeid}/addEvent`}>     <button className={styles.eventButton}>Add Event</button></Link>  
         }
-        <Link to={`/exploreLocalCauses`}> <button className={styles.followButton}>Explore Local Causes</button></Link>
         </div>
     );
 };
