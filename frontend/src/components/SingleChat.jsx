@@ -12,7 +12,7 @@ import io from "socket.io-client";
 import animationData from "../animations/typing.json"
 import ScrollableChat from './ScrollableChat';
 import { StoreContext } from '../context/StoreContext';
-const ENDPOINT="http://localhost:5000"
+const ENDPOINT="https://causegrambackend-bju0.onrender.com"
 var socket,selectedChatCompare;
 
 function SingleChat({fetchAgain,setFetchAgain}) {
