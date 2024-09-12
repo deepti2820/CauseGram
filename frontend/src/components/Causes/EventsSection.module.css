@@ -1,0 +1,61 @@
+.eventsSection {
+    width: 80%;
+    margin: 20px 0;
+}
+
+.eventCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.eventCard {
+    width: 48%;
+    /* height:150px; */
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    /* overflow: hidden; */
+    margin-bottom: 20px;
+}
+
+.eventCardImg{
+    width: 100%;
+    height:150px;
+    object-fit: cover;
+}
+
+.eventCard img {
+    width: 100%;
+    height: 150px;
+    object-fit: fill;
+}
+
+.eventCard div {
+    padding: 15px;
+}
+
+.eventCard h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.eventCard p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.eventCard button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.eventCard button:hover {
+    background-color: #45a049;
+}
