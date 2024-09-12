@@ -24,6 +24,13 @@ import ExplorePage from './components/ExplorePage'
 import { StoreContext } from './context/StoreContext'
 import ChatPage from './components/ChatPage'
 import './App.css';
+import CauseProfile from './components/Causes/CauseProfile'
+import CauseCard from './components/Causes/CauseCard'
+import CauseGrid from './components/Causes/CauseGrid'
+import CreateCause from './components/Causes/CreateCause'
+import CreateEvent from './components/Causes/CreateEvent'
+import DonatePage from './components/Causes/DonatePage'
+import MapComponent from './components/Causes/MapComponent'
 
 
 function App() {
@@ -53,6 +60,13 @@ function App() {
           <Route path="/post/:id" element={<SinglePost />}></Route>
           <Route path="/explore" element={<ExplorePage/>} />
           <Route path="/chats" element={<ChatPage/>}/>
+          <Route exact path="/causeProfile" element={<CauseGrid/>}/>
+          <Route path="/causeProfile/:causeid" element={<CauseProfile/>}/>
+          <Route path="/createCause" element={<CreateCause/>}/>
+          <Route path="/:causeid/addEvent" element={<CreateEvent/>}/>
+          <Route path="causeProfile/donate/:causeid" element={<DonatePage/>}/>
+          <Route path="/exploreLocalCauses" element={<MapComponent/>}/>
+
       </Routes>
       {
         modalOpen && <Model setModalOpen={setModalOpen}></Model>
