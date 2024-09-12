@@ -167,14 +167,14 @@ function SignUp() {
           />
 
           <hr></hr>
-          <GoogleLogin
+{/*           <GoogleLogin
             onSuccess={(credentialResponse) => {
                 continueWithGoogle(credentialResponse)
             }}
             onError={() => {
               console.log("Login Failed");
             }}
-          />
+          /> */}
           
         </div>
 
