@@ -65,7 +65,6 @@ function App() {
           <Route path="/createCause" element={<CreateCause/>}/>
           <Route path="/:causeid/addEvent" element={<CreateEvent/>}/>
           <Route path="causeProfile/donate/:causeid" element={<DonatePage/>}/>
-          <Route path="/exploreLocalCauses" element={<MapComponent/>}/>
 
       </Routes>
       {
