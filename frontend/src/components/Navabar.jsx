@@ -19,6 +19,8 @@ function Navabar({userLogin}) {
         <Link to="/followingpost"><li>Following Post</li></Link>
         <Link to="/profile"><li>Profile</li></Link>
         <Link to="/createPost"><li>Create Post</li></Link>
+        <Link to="/causeProfile"><li>All Cause </li></Link>
+        <Link to="/createCause"><li>Create Cause Profile</li></Link>
         <Link to="/chats"><div >
         <MdMessage fontSize={20} />
         <div className={styles.notificationBbadge} >
