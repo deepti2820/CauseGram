@@ -21,7 +21,7 @@ function Home() {
 
 
   const[item,setItem]=useState([])
-  const{likePost,unLikePost,data,makeComment,setData}=useContext(StoreContext)
+  const{likePost,unLikePost,data,makeComment,setData,url}=useContext(StoreContext)
 
 
   useEffect(() => {
@@ -42,7 +42,7 @@ function Home() {
 
   const fetchPost=()=>{
     
-    fetch(`http://localhost:5000/allposts?limit=${limit}&skip=${skip}`, {
+    fetch(`${url}/allposts?limit=${limit}&skip=${skip}`, {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("jwt"),
       },
