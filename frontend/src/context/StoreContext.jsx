@@ -11,64 +11,71 @@ const StoreContextProvider=(props)=>{
 
  const[modalOpen,setModalOpen]= useState(false)
 
+const url="https://causegrambackend-bju0.onrender.com"
+const frontendUrl="https://causegramfrontend.onrender.com";
 
  const [userLogin,setUserLogin]=useState(false);
 
- const url="https://causegrambackend-bju0.onrender.com"
-
-const frontendUrl="https://causegramfrontend.onrender.com";
-
  const likePost = (id) => {
-    fetch(`${url}/like`, {
-      method: "put",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + localStorage.getItem("jwt"),
-      },
-      body: JSON.stringify({
-        postId: id,
-      }),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        const newData = data.posts.map((posts) => {
-          if (posts._id == result._id) {
+  fetch(`${url}/like`, {
+    method: "put",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("jwt"),
+    },
+    body: JSON.stringify({
+      postId: id,
+    }),
+  })
+    .then((res) => res.json())
+    .then((result) => {
+      setData((prevData) => {
+        const newData = prevData.posts.map((posts) => {
+          if (posts._id === result._id) {
             return result;
           } else {
             return posts;
           }
         });
-        setData(newData);
-        console.log(result);
+        return { ...prevData, posts: newData };
       });
-  };
-
-  const unLikePost = (id) => {
-    fetch(`${url}/unlike`, {
-      method: "put",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + localStorage.getItem("jwt"),
-      },
-      body: JSON.stringify({
-        postId: id,
-      }),
+      console.log(result);
     })
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(data)
-        const newData = data.posts.map((posts) => {
-          if (posts._id == result._id) {
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+const unLikePost = (id) => {
+  fetch(`${url}/unlike`, {
+    method: "put",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("jwt"),
+    },
+    body: JSON.stringify({
+      postId: id,
+    }),
+  })
+    .then((res) => res.json())
+    .then((result) => {
+      
+      setData((prevData) => {
+        const newData = prevData.posts.map((posts) => {
+          if (posts._id === result._id) {
             return result;
           } else {
             return posts;
           }
         });
-        setData(newData);
-        console.log(result);
+        return { ...prevData, posts: newData };
       });
-  };
-
+      console.log(result);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
   const makeComment = (text, id) => {
     if(!text){
       return toast.error("Add Comment")
@@ -86,19 +93,20 @@ const frontendUrl="https://causegramfrontend.onrender.com";
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
-        const newData = data.posts.map((posts) => {
-          if (posts._id == result._id) {
-            return result;
-          } else {
-            return posts;
-          }
+        setData((prevData) => {
+          const newData = prevData.posts.map((posts) => {
+            if (posts._id === result._id) {
+              return result;
+            } else {
+              return posts;
+            }
+          });
+          return { ...prevData, posts: newData };
         });
-        setData(newData);
-        
-        setComment(" ");
-        toast.success("Comment added.")
-        
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 
@@ -116,8 +124,7 @@ const frontendUrl="https://causegramfrontend.onrender.com";
         makeComment,
         comment,
         setComment,
-        url,
-        frontendUrl
+        url
     }
     return (
         <StoreContext.Provider value={contextValue}>
