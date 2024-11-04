@@ -21,7 +21,7 @@ function Home() {
 
 
   const[item,setItem]=useState([])
-  const{likePost,unLikePost,data,makeComment,setData}=useContext(StoreContext)
+  const{likePost,unLikePost,data,makeComment,setData,url}=useContext(StoreContext)
 
 
   useEffect(() => {
