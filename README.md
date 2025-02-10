@@ -5,7 +5,7 @@ https://causegramfrontend.onrender.com
 
 # CauseGram
 
-CauseGram is a social media platform that blends the familiar features of photo  sharing with a unique focus on social causes. Designed as an evolution of the Instagram model, CauseGram empowers users to share their moments while actively contributing to positive social impact. The platform enables users to not only connect with friends and family but also engage with and support various social, environmental, and charitable causes.
+CauseGram is a social media platform similar to Instagram but designed to raise awareness about social causes. Users can post images, like, comment, and follow others—just like Instagram. However, what makes CauseGram unique is that it allows users to create profiles specifically for social causes. For example, if someone wants to raise awareness about climate change or mental health, they can create a dedicated profile and post about it.
 
 ## Tech Stack
 
